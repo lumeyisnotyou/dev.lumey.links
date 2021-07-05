@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+.title-text {
+  font-size: 50px
+}
+
+.title-text .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  50% {opacity: 0;}
+  100% {opacity:1;}
+}
+p {
+    font-family: 'Roboto Mono', monospace;
+    animation: fadeIn linear 3s;
+    }
+
+body{
+    display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: left;
+  padding: 4vmin;
+  height: 90%;
+  width: 90%;
+  background: #ede8e2;
+  color: #3a3535;
+}
