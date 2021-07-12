@@ -2,32 +2,23 @@
 <html>
 <head>
 
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../../style.css">
   <title>Login | BETA</title>
 </head>
 <body style="background-color: rgb(23,23,23)">
 
   <div>
-  <h1 class="title-text" style="font-family: 'Krona One', sans-serif; color: white;">Login. <i>[BETA]</i></h1>
-  <div class="forms">
-
-  <div class="form">
-  <div class="form__item">
-    <input type="email" id="email" required="required"/><div class="form__item-title">email</div>
-  </div>
-  </div>
-     <div class="form">
-  <div class="form__item">
-    <input type="password" id="pass" required="required"/><span class="form__item-title">password</span>
-  </div>
-  </div>
-      <button class="authbutton" id="pass" onclick="return loginUser(this)">Log In</button>
-
-  </div>
-
+ <nav class="nav">
+      <img src="../img/links.png" class="navlogo"></img>
+    <div class="menuitemdiv">
+      <a class="navitem" href="#support">upload</a>
+      <whitespace style="width: 20px; height: 100%;"></whitespace>
+      <a class="navitem" href="#top">profile</a>
+          <button class="buttonb" onclick="return signOut()">sign out</button>
+      </div>
+      </nav>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="../animation.js"></script>
-    <script src="auth.js"></script>
+    <script src="../../animation.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 
@@ -35,7 +26,7 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
-
+<script src="../auth.js"></script>
 <script>
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -52,7 +43,6 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script>
-  <script src="auth.js"></script>
     <script>
       // Check if user is already signed in
     firebase.auth().onAuthStateChanged((user)=>{
@@ -62,8 +52,10 @@
         let uid
         if(user != null){
             uid = user.uid;
-           window.location.replace("home/index.html");
+
         }
+      } else {
+        window.location.replace("../login.html");
       }
       });
     </script>

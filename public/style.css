@@ -152,3 +152,57 @@ background-color: #fff;
   box-shadow: 0 0px;
   background-color: #ebebeb; /* i really like this color hex code btw */
 }
+
+.navlogo {
+position: relative;
+width: 203px;
+height: 85.3px;
+}
+.nav {
+position: fixed;
+top: 0;
+width: 95%;
+z-index: 20;
+}
+.menuitemdiv{
+position: fixed;
+top: 3.5%;
+left: 75%;
+font-size: 20px;
+padding-left: 5px;
+padding-right: 5px;
+margin: auto;
+}
+.navitem{
+padding-left: 20px;
+padding-right: 20px;
+    animation: fadeIn linear 3s;
+}
+.buttonb {
+  background-color: rgb(23,23,23);
+  border: 2px solid #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 900;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: all 0.5s ease-out;
+  border-radius: 10px;
+ height: 50%;
+     animation: fadeIn linear 2s;
+  }
+.buttonb:hover {
+  box-shadow: 0 4px 8px 0 rgba(255,255,255,0.24), 0 7px 25px 0 rgba(255,255,255,255.19);
+  background-color: #fff;
+  color: black;
+
+}
+.buttonb:active {
+  box-shadow: 0 0px;
+  background-color: #ebebeb; /* i really like this color hex code btw */
+
+}

@@ -14,5 +14,13 @@ firebase.auth().signInWithEmailAndPassword(email, password)
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
+    console.log(errorMessage);
+  });
+}
+
+function signOut() {
+  firebase.auth().signOut()
+  .then(function() {
+  window.location.replace("index.html")
   });
 }
