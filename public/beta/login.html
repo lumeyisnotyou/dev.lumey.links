@@ -10,7 +10,7 @@
   <div>
   <h1 class="title-text" style="font-family: 'Krona One', sans-serif; color: white;">Login. <i>[BETA]</i></h1>
   <div class="forms">
-    <form onsubmit="return loginUser(this)">
+    <form >
   <div class="form">
   <div class="form__item">
     <input type="email" id="email" required="required"/><div class="form__item-title">email</div>
@@ -21,7 +21,7 @@
     <input type="password" required="required"/><span class="form__item-title">password</span>
   </div>
   </div>
-      <input class="authbutton" id="pass" type="submit" name="submit" value="Log In"></input>
+      <button class="authbutton" id="pass" onclick="return loginUser(this)">Log In</button>
     </form>
   </div>
 
