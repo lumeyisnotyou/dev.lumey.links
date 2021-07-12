@@ -10,18 +10,21 @@
   <div>
   <h1 class="title-text" style="font-family: 'Krona One', sans-serif; color: white;">Login. <i>[BETA]</i></h1>
   <div class="forms">
+    <form onsubmit="return loginUser(this)">
   <div class="form">
   <div class="form__item">
-    <input type="text" required="required"/><span class="form__item-title">email</span>
+    <input type="email" id="email" required="required"/><div class="form__item-title">email</div>
   </div>
   </div>
      <div class="form">
   <div class="form__item">
-    <input type="text" required="required"/><span class="form__item-title">password</span>
+    <input type="password" required="required"/><span class="form__item-title">password</span>
   </div>
   </div>
-      <input class="authbutton" type="button" name="submit" onclick="attempt_auth();" value="Log In"></input>
+      <input class="authbutton" id="pass" type="submit" name="submit" value="Log In"></input>
+    </form>
   </div>
+
    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="../animation.js"></script>
     <script src="auth.js"></script>
