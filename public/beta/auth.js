@@ -7,6 +7,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
+    console.log("signed in");
     window.location.replace("index.html");
     // ...
   })
