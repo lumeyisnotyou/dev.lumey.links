@@ -1,0 +1,22 @@
+{
+  "name": "links",
+  "version": "1.0.0",
+  "description": "a simple HTML website for hosting files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumeyisnotyou/dev.lumey.links.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumeyisnotyou/dev.lumey.links/issues"
+  },
+  "homepage": "https://github.com/lumeyisnotyou/dev.lumey.links#readme",
+  "dependencies": {
+    "material-components-web": "^11.0.0"
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="../style.css">
+  <title>Login | BETA</title>
+</head>
+<body style="background-color: rgb(23,23,23)">
+
+  <div>
+  <h1 class="title-text" style="font-family: 'Krona One', sans-serif; color: white;">Login. <i>[BETA]</i></h1>
+  <div class="forms">
+  <div class="form">
+  <div class="form__item">
+    <input type="text" required="required"/><span class="form__item-title">email</span>
+  </div>
+  </div>
+     <div class="form">
+  <div class="form__item">
+    <input type="text" required="required"/><span class="form__item-title">password</span>
+  </div>
+  </div>
+      <input class="authbutton" type="button" name="submit" onclick="attempt_auth();" value="Log In"></input>
+  </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="../animation.js"></script>
+    <script src="auth.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+<!-- DONE: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAo3rC4uaenfAWo0P3BtveNv5nRC7CRpLI",
+    authDomain: "lumeylinks.firebaseapp.com",
+    projectId: "lumeylinks",
+    storageBucket: "lumeylinks.appspot.com",
+    messagingSenderId: "194912271062",
+    appId: "1:194912271062:web:142561e772bb6ae4b22777",
+    measurementId: "G-6NRMCW80P4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+  <script src="auth.js"></script>
+</body>
+</html>
+
