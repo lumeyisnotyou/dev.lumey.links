@@ -1003,6 +1003,7 @@
 .filepond--root * {
     box-sizing: inherit;
     line-height: inherit;
+
 }
 .filepond--root *:not(text) {
     font-size: inherit;
