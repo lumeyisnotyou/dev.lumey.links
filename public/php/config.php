@@ -5,9 +5,9 @@ const ENTRY_FIELD = array('filepond');
 
 
 // where to write files to
-const TRANSFER_DIR = '/var/www/links/tmp';
-const UPLOAD_DIR = '/var/www/links/uploads';
-const VARIANTS_DIR = '/var/www/links/variants';
+const TRANSFER_DIR = '/var/www/links/public/tmp';
+const UPLOAD_DIR = '/var/www/links/public/uploads';
+const VARIANTS_DIR = '/var/www/links/public/variants';
 
 // name to use for the file metadata object
 const METADATA_FILENAME = '.metadata';
