@@ -121,7 +121,7 @@
 
     }
 
-    header('Content-Type: application/json');
+    header('Content-Type: text/html');
     echo json_encode($response);
 
     exit();
