@@ -3,10 +3,12 @@
 // where to get files from
 const ENTRY_FIELD = array('filepond');
 
+$dirup = dirname(__DIR__, 1)
+
 // where to write files to
-const TRANSFER_DIR = dirname(__DIR__, 1) . '/tmp';
-const UPLOAD_DIR = dirname(__DIR__, 1) . '/uploads';
-const VARIANTS_DIR = dirname(__DIR__, 1) . '/variants';
+const TRANSFER_DIR = $dirup . '/tmp';
+const UPLOAD_DIR = $dirup . '/uploads';
+const VARIANTS_DIR = $dirup . '/variants';
 
 // name to use for the file metadata object
 const METADATA_FILENAME = '.metadata';
