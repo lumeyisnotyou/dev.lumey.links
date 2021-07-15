@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/lumeyisnotyou/dev.lumey.links#readme",
   "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-filepond": "^1.0.0",
     "material-components-web": "^11.0.0"
   }
 }
