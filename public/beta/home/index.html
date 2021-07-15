@@ -46,6 +46,11 @@
 <script>
     // Get a reference to the file input element
     const inputElement = document.querySelector('input[type="file"]');
+    // Set default FilePond options
+    FilePond.setOptions({
+
+        server: '/php/'
+    });
 
 
     // Turn a file input into a file pond
