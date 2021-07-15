@@ -1,5 +1,5 @@
 // Turn input element into a pond
-$('.my-pond').filepond();
+/*$('.my-pond').filepond();
 
 // Turn input element into a pond with configuration options
 $('.my-pond').filepond({
@@ -20,9 +20,20 @@ $('.my-pond')
     .then(function (file) {
         console.log('file added', file);
     });
-
+*/
 $.fn.filepond.registerPlugin(FilePondPluginFileValidateSize);
 
 $.fn.filepond.setDefaults({
-    maxFileSize: '3MB',
+    maxFileSize: '150MB',
+});
+
+import { create } from 'filepond';
+import 'filepond/dist/filepond.css';
+
+// Get a file input reference
+const input = document.querySelector('input[type="file"]');
+
+// Create a FilePond instance
+create(input, {
+    storeAsFile: true,
 });
