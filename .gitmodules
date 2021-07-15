@@ -1,0 +1,3 @@
+[submodule "public/public/php"]
+	path = public/public/php
+	url = https://github.com/pqina/filepond-server-php
