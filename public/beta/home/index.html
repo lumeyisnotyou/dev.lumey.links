@@ -3,6 +3,7 @@
 <head>
 
   <link rel="stylesheet" href="https://links.lumey.dev/style.css">
+    <link rel="stylesheet" href="./scripts/filepond.css">
   <title>Login | BETA</title>
 </head>
 <body style="background-color: rgb(23,23,23)">
@@ -27,19 +28,14 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+<script src="./scripts/filepond.js"></script>
 
+<script>
+    // Get a reference to the file input element
+    const inputElement = document.querySelector('input[type="file"]');
 
-<script type="module">
-import * as FilePond from './filepond';
-
-// Create a multi file upload component
-const pond = FilePond.create({
-    multiple: true,
-    name: 'filepond'
-});
-
-// Add it to the DOM
-document.body.appendChild(pond.element);
+    // Create a FilePond instance
+    const pond = FilePond.create(inputElement);
 </script>
 <script src="../auth.js"></script>
 <script>
