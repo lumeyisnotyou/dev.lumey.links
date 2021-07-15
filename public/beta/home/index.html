@@ -50,11 +50,16 @@
     FilePond.setOptions({
 
         server: '/php/'
+        allowMultiple:
     });
 
 
     // Turn a file input into a file pond
     var pond = FilePond.create(document.querySelector('input[type="file"]'));
+  pond.addEventListener('FilePond:processfiles', (e) => {
+    console.log('File added', e.detail);
+});
+
 </script>
 <script src="../auth.js"></script>
 <script>
