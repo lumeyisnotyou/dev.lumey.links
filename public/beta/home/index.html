@@ -55,7 +55,8 @@
 
     // Turn a file input into a file pond
     var pond = FilePond.create(document.querySelector('input[type="file"]'));
-  pond.addEventListener('FilePond:processfiles', (e) => {
+  const uploader = document.querySelector('.my-pond');
+  uploader.addEventListener('FilePond:processfiles', (e) => {
     console.log('File added', e.detail);
 });
 
