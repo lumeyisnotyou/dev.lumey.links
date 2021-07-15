@@ -206,3 +206,36 @@ padding-right: 20px;
   background-color: #ebebeb; /* i really like this color hex code btw */
 
 }
+
+.buttonbb {
+  background-color: rgb(23,23,23);
+  border: 2px solid #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 900;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: all 0.5s ease-out;
+  border-radius: 10px;
+ height: 50%;
+ left: 50%;
+ top: 75%;
+ position: fixed;
+ transform: translate(-50%, -50%);
+     animation: fadeIn linear 2s;
+  }
+.buttonbb:hover {
+  box-shadow: 0 4px 8px 0 rgba(255,255,255,0.24), 0 7px 25px 0 rgba(255,255,255,255.19);
+  background-color: #fff;
+  color: black;
+
+}
+.buttonbb:active {
+  box-shadow: 0 0px;
+  background-color: #ebebeb; /* i really like this color hex code btw */
+
+}
