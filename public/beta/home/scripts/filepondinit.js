@@ -1,5 +1,5 @@
 //Turn input element into a pond
-*$('.my-pond').filepond();
+$('.my-pond').filepond();
 
 // Turn input element into a pond with configuration options
 $('.my-pond').filepond({
