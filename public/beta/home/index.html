@@ -47,8 +47,22 @@
     const inputElement = document.querySelector('input[type="file"]');
 
     // Create a FilePond instance
-    const pond = FilePond.create(inputElement, {
- // server
+  //create the plUFHASUDFSA
+   FilePond.registerPlugin(
+        FilePondPluginImagePreview,
+        FilePondPluginImageExifOrientation,
+        FilePondPluginFileValidateSize,
+        FilePondPluginImageEdit,
+        FilePondPluginFileValidateType
+      );
+
+         FilePond.create(
+        document.querySelector('filepond'),
+        {
+          name: 'filepond',
+          maxFiles: 5,
+          allowBrowse: true,
+          // server
           server: {
             load: (uniqueFileId, load, error, progress, abort, headers) => {
               console.log('attempting to load', uniqueFileId);
@@ -80,11 +94,37 @@
                   console.log(err)
                   error(err.message);
                 })
+
+              return {
+                abort: () => {
+                  // User tapped cancel, abort our ongoing actions here
+                  controller.abort();
+                  // Let FilePond know the request has been cancelled
+                  abort();
+                }
+              };
+            },
+            // remove:
+          },
+          //files array
+          files: [
+            // display existing campaign images from the server here
+            {
+              // the server file reference
+              source: '60a004d5383e9',
+              // set type to local to indicate an already uploaded file
+              options: {
+                type: 'local',
+              }
+            },
+          ],
+        }
+      );
     FilePond.setOptions({
         server: {
-          // url: "/",
+          url: "/php/",
           process: {
-            url: 'process.php',
+            url: '/php/process.php',
             method: 'POST',
             headers: {
               'x-customheader': 'Processing File'
