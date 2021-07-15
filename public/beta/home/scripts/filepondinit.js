@@ -1,4 +1,4 @@
-Turn input element into a pond
+//Turn input element into a pond
 *$('.my-pond').filepond();
 
 // Turn input element into a pond with configuration options
