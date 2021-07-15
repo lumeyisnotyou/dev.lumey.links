@@ -20,3 +20,9 @@ $('.my-pond')
     .then(function (file) {
         console.log('file added', file);
     });
+
+$.fn.filepond.registerPlugin(FilePondPluginFileValidateSize);
+
+$.fn.filepond.setDefaults({
+    maxFileSize: '3MB',
+});
