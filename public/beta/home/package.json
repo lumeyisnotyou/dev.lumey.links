@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "type": "module",
   "license": "ISC",
   "dependencies": {
+    "filepond": "^4.28.2",
     "jquery": "^3.6.0",
     "jquery-filepond": "^1.0.0"
   }
