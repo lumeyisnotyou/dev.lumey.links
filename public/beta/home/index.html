@@ -48,13 +48,13 @@
 
     // Create a FilePond instance
   //create the plUFHASUDFSA
-   FilePond.registerPlugin(
+  /* FilePond.registerPlugin(
         FilePondPluginImagePreview,
         FilePondPluginImageExifOrientation,
         FilePondPluginFileValidateSize,
         FilePondPluginImageEdit,
         FilePondPluginFileValidateType
-      );
+      );*/
 
          FilePond.create(
         document.querySelector('.my-pond'),
@@ -113,7 +113,7 @@
         server: {
           url: "/php/",
           process: {
-            url: '/php/process.php',
+            url: 'process.php',
             method: 'POST',
             headers: {
               'x-customheader': 'Processing File'
