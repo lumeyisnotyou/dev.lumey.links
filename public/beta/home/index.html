@@ -57,7 +57,7 @@
     var pond = FilePond.create(document.querySelector('input[type="file"]'));
   const uploader = document.querySelector('.my-pond');
   uploader.addEventListener('FilePond:processfiles', (e) => {
-    console.log('File added', e.detail);
+    console.log('File added', e);
 });
 
 </script>
