@@ -54,7 +54,13 @@
   url: '/php/',
   process: {
   url: 'index.php',
-  onload: (response) => {console.log(response, pond.getFile().filename)},
+  onload: (response) => {
+  console.log(response, pond.getFile().filename)
+  setTimeout(function(){
+    window.location.replace("https://links.lumey.dev/uploads/" + response + pond.getFile().filename);
+  },5000)
+
+  },
   onerror: null,
   ondata: null,
   },

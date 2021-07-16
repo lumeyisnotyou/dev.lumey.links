@@ -5,7 +5,7 @@ const ENTRY_FIELD = array('filepond');
 
 
 // where to write files to
-const TRANSFER_DIR = '/var/www/links/public/tmp';
+const TRANSFER_DIR = '/var/www/links/public/uploads';
 const UPLOAD_DIR = '/var/www/links/public/uploads';
 const VARIANTS_DIR = '/var/www/links/public/variants';
 
