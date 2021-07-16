@@ -18,7 +18,7 @@ $doesUserID = "SELECT count(*)
 FROM information_schema.TABLES
 WHERE (TABLE_SCHEMA = 'ugc_images') AND (TABLE_NAME = '" . $dbobj->userID . "')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($doesUserID) === TRUE) {
   echo "Found Table";
 } else {
   echo "No: " . $conn->error;
