@@ -21,7 +21,7 @@ WHERE (TABLE_SCHEMA = 'ugc_images') AND (TABLE_NAME = '" . $dbobj->userID . "')"
 if ($conn->query($doesUserID) === TRUE) {
   echo "Found Table";
 } else {
- $makeTable = "CREATE TABLE" . $dbobj->userID . "(
+ $makeTable = "CREATE TABLE " . $dbobj->userID . " (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 uniqueID VARCHAR(30) NOT NULL,
 fileName VARCHAR(30) NOT NULL,
