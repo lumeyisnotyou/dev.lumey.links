@@ -52,6 +52,12 @@
         server: {
 
   url: '/php/',
+  process: {
+  url: '/php/',
+  onload: (response) => {return response},
+  onerror: null,
+  ondata: null,
+  },
   },
     });
 
