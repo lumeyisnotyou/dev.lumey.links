@@ -2,7 +2,7 @@
 // db n' stuff
 $servername = 'localhost';
 $username = 'PHP';
-$password = 'd&(SYA&FDT6HA^ATS6ts&GHsf*^A%sa$&'
+$password = 'd&(SYA&FDT6HA^ATS6ts&GHsf*^A%sa$&';
 $db = "ugc_images";
 
 $conn = new mysqli($servername, $username, $password, $db);
