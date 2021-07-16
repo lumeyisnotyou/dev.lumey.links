@@ -18,8 +18,17 @@ $doesUserID = "SELECT count(*)
 FROM information_schema.TABLES
 WHERE (TABLE_SCHEMA = 'ugc_images') AND (TABLE_NAME = '" . $dbobj->userID . "')";
 
+$addImageUpload = "INSERT INTO " . $dbobj->userID . " (uniqueID, fileName)
+VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
+
 if ($conn->query($doesUserID) === TRUE) {
   echo "Found Table";
+  if ($conn->query($addImageUpload) === TRUE) {
+  echo "Created Image Upload!";
+
+} else {
+  echo "Oops... " . $conn->error;
+}
 } else {
  $makeTable = "CREATE TABLE " . $dbobj->userID . " (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -29,6 +38,13 @@ reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 if ($conn->query($makeTable) === TRUE) {
   echo "Created Table!";
+   if ($conn->query($addImageUpload) === TRUE) {
+  echo "Created Image Upload!";
+
+} else {
+  echo "Oops... " . $conn->error;
+}
+
 } else {
   echo "Oops... " . $conn->error;
 }
