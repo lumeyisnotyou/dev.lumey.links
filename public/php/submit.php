@@ -47,7 +47,7 @@ function handle_base64_encoded_file_post($files) {
         }
         */
         $file = @json_decode($file);
-
+	FilePond\echo_file($file);
         // Skip files that failed to decode
         if (!is_object($file)) continue;
 
