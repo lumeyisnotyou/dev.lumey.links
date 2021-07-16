@@ -28,7 +28,6 @@ if ($conn->query($doesUserID) === TRUE) {
   		echo "Oops... " . $conn->error;
 	}
 } else {
-	echo $conn->query($doesUserID);
  	$makeTable = "CREATE TABLE " . $dbobj->userID . " (
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		uniqueID VARCHAR(30) NOT NULL,
