@@ -94,6 +94,8 @@
        var toEncode = {'uniqueID': response, 'fileName': pond.getFile().filename, 'userID': firebase.auth().currentUser.uid}
   var encodedResult = JSON.stringify(toEncode);
       console.log(encodedResult)
+      var fs = require('fs');
+      fs.writeFile('scripts/database.json', encodedResult, 'utf8', callback);
       }
 
   setTimeout(function(){
