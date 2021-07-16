@@ -57,7 +57,7 @@
   onload: (response) => {
   console.log(response, pond.getFile().filename)
   setTimeout(function(){
-    window.location.replace("https://links.lumey.dev/uploads/" + response + pond.getFile().filename);
+    window.location.replace("https://links.lumey.dev/uploads/" + response + "/" + pond.getFile().filename);
   },5000)
 
   },
