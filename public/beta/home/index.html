@@ -94,8 +94,10 @@
        var toEncode = {'uniqueID': response, 'fileName': pond.getFile().filename, 'userID': firebase.auth().currentUser.uid}
   var encodedResult = JSON.stringify(toEncode);
       console.log(encodedResult)
-      var fs = require('fs');
-      fs.writeFile('scripts/database.json', encodedResult, 'utf8', callback);
+      var dbRequest = new XMLHttpRequest();
+      dbRequest.open("POST", 'https://links.lumey.dev/php/db.php',true);
+      dbRequest.setRequestHeader('Content-Type', 'application/json');
+      dbRequest.send(encodedResult);
       }
 
   setTimeout(function(){
