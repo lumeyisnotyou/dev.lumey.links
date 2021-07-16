@@ -4,6 +4,7 @@
 
   <link rel="stylesheet" href="https://links.lumey.dev/style.css">
     <link rel="stylesheet" href="./scripts/filepond.css">
+      <link rel="stylesheet"  href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css">
   <title>Login | BETA</title>
 </head>
 <body style="background-color: rgb(23,23,23)">
@@ -47,10 +48,12 @@
     // Get a reference to the file input element
     const inputElement = document.querySelector('input[type="file"]');
     // Set default FilePond options
+  //plugin too
+      FilePond.registerPlugin(FilePondPluginImagePreview);
     FilePond.setOptions({
 
         server: {
-
+  instantUpload: 'false',
   url: '/php/',
   process: {
   url: 'index.php',
