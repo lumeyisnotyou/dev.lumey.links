@@ -21,6 +21,16 @@ WHERE (TABLE_SCHEMA = 'ugc_images') AND (TABLE_NAME = '" . $dbobj->userID . "')"
 if ($conn->query($doesUserID) === TRUE) {
   echo "Found Table";
 } else {
-  echo "No: " . $conn->error;
+ $makeTable = "CREATE TABLE" . $dbobj->userID . "(
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+uniqueID VARCHAR(30) NOT NULL,
+fileName VARCHAR(30) NOT NULL,
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+if ($conn->query($makeTable) === TRUE) {
+  echo "Created Table!";
+} else {
+  echo "Oops... " . $conn->error;
+}
 }
 
