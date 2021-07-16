@@ -43,38 +43,6 @@
     src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
 
 <script src="./scripts/filepond.js"></script>
-
-<script>
-    // Get a reference to the file input element
-    const inputElement = document.querySelector('input[type="file"]');
-    // Set default FilePond options
-  //plugin too
-      FilePond.registerPlugin(FilePondPluginImagePreview);
-    FilePond.setOptions({
-  instantUpload: false,
-        server: {
-
-  url: '/php/',
-  process: {
-  url: 'index.php',
-  onload: (response) => {
-  console.log(response, pond.getFile().filename)
-  setTimeout(function(){
-    window.location.replace("https://links.lumey.dev/uploads/" + response + "/" + pond.getFile().filename);
-  },5000)
-
-  },
-  onerror: null,
-  ondata: null,
-  },
-  },
-    });
-
-
-    // Turn a file input into a file pond
-    var pond = FilePond.create(document.querySelector('input[type="file"]'));
-  const uploader = document.querySelector('.my-pond');
-</script>
 <script src="../auth.js"></script>
 <script>
   // Your web app's Firebase configuration
@@ -107,6 +75,43 @@
         window.location.replace("../login.html");
       }
       });
+
+       // Get a reference to the file input element
+    const inputElement = document.querySelector('input[type="file"]');
+    // Set default FilePond options
+  //plugin too
+      FilePond.registerPlugin(FilePondPluginImagePreview);
+    FilePond.setOptions({
+  instantUpload: false,
+        server: {
+
+  url: '/php/',
+  process: {
+  url: 'index.php',
+  onload: (response) => {
+  console.log(response, pond.getFile().filename)
+  if(response != null){
+       var toEncode = {response, pond.getFile().filename, firebase.auth().currentUser.uid}
+  var encodedResult = JSON.stringify(toEncode);
+      console.log(encodedResult)
+      }
+
+  setTimeout(function(){
+    window.location.replace("https://links.lumey.dev/uploads/" + response + "/" + pond.getFile().filename);
+  },5000)
+
+  },
+  onerror: null,
+  ondata: null,
+  },
+  },
+    });
+
+
+    // Turn a file input into a file pond
+    var pond = FilePond.create(document.querySelector('input[type="file"]'));
+  const uploader = document.querySelector('.my-pond');
+
     </script>
 </body>
 </html>
