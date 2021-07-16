@@ -1,7 +1,7 @@
 <?php
 // db n' stuff
 $servername = 'localhost';
-$username = 'PHP';
+$username = 'php';
 $password = 'd&(SYA&FDT6HA^ATS6ts&GHsf*^A%sa$&';
 $db = "ugc_images";
 
