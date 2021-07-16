@@ -29,7 +29,7 @@ ELSE
 $addImageUpload = "INSERT INTO " . $dbobj->userID . " (uniqueID, fileName)
 VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
 
-if ($conn->query($doesUserID) === TRUE) {
+if ($conn->query($doesUserID) === 'TRUE') {
   echo "Found Table";
   if ($conn->query($addImageUpload) === TRUE) {
   echo "Created Image Upload!";
