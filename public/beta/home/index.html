@@ -91,7 +91,7 @@
   onload: (response) => {
   console.log(response, pond.getFile().filename)
   if(response != null){
-       var toEncode = {response, pond.getFile().filename, firebase.auth().currentUser.uid}
+       var toEncode = {'uniqueID': response, 'fileName': pond.getFile().filename, 'userID': firebase.auth().currentUser.uid}
   var encodedResult = JSON.stringify(toEncode);
       console.log(encodedResult)
       }
