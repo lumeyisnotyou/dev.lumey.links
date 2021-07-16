@@ -21,26 +21,27 @@ VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
 
 if ($conn->query($doesUserID) === TRUE) {
   echo "Found Table";
-  if ($conn->query($addImageUpload) === TRUE) {
-  echo "Created Image Upload!";
+	if ($conn->query($addImageUpload) === TRUE) {
+  	echo "Created Image Upload!";
 
+} 	else {
+  		echo "Oops... " . $conn->error;
+	}
 } else {
-  echo "Oops... " . $conn->error;
-}
-} else {
- $makeTable = "CREATE TABLE " . $dbobj->userID . " (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-uniqueID VARCHAR(30) NOT NULL,
-fileName VARCHAR(30) NOT NULL,
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)";
-if ($conn->query($makeTable) === TRUE) {
-  echo "Created Table!";
-   if ($conn->query($addImageUpload) === TRUE) {
-  echo "Created Image Upload!";
+	echo $conn->query($doesUserID);
+ 	$makeTable = "CREATE TABLE " . $dbobj->userID . " (
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		uniqueID VARCHAR(30) NOT NULL,
+	fileName VARCHAR(30) NOT NULL,
+	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+	)";
+		if ($conn->query($makeTable) === TRUE) {
+ 		 echo "Created Table!";
+  		 if ($conn->query($addImageUpload) === TRUE) {
+ 		 echo "Created Image Upload!";
 
-} else {
-  echo "Oops... " . $conn->error;
+} 	else {
+  		echo "Oops... " . $conn->error;
 }
 
 } else {
