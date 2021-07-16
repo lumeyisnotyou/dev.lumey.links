@@ -14,7 +14,7 @@ die("oh no, i couldn't connect to MySQL! here's why: " . $conn->connect_error);
 $dbjson = file_get_contents('php://input');
 $dbobj = json_decode($dbjson);
 
-$doesUserID = mysql_query('select 1 from ' . $dbobj->userID . ' LIMIT 1');
+$doesUserID = 'select 1 from ' . $dbobj->userID . ' LIMIT 1';
 
 $addImageUpload = "INSERT INTO " . $dbobj->userID . " (uniqueID, fileName)
 VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
