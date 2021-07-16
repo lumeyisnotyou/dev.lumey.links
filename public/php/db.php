@@ -19,7 +19,7 @@ $doesUserID = 'select * from ' . $dbobj->userID . ' LIMIT 1';
 $addImageUpload = "INSERT INTO " . $dbobj->userID . " (uniqueID, fileName)
 VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
 
-if ($conn->query($doesUserID) !== false) {
+if ($conn->query($doesUserID) !== FALSE) {
   echo "Found Table";
 	if ($conn->query($addImageUpload) === TRUE) {
   	echo "Created Image Upload!";
