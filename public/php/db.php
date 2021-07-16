@@ -14,7 +14,17 @@ die("oh no, i couldn't connect to MySQL! here's why: " . $conn->connect_error);
 $dbjson = file_get_contents('php://input');
 $dbobj = json_decode($dbjson);
 
-$doesUserID = "if exists (select 1 from information_schema.tables where table_name = '" . $dbobj->userID . "')";
+$doesUserID = "IF (EXISTS (SELECT *
+   FROM INFORMATION_SCHEMA.TABLES
+   WHERE TABLE_SCHEMA = 'dbo'
+   AND TABLE_NAME = '" . $dbobj->uniqueID . "'))
+   BEGIN
+      PRINT 'TRUE'
+   END;
+ELSE
+   BEGIN
+      PRINT 'FALSE'
+   END; ";
 
 $addImageUpload = "INSERT INTO " . $dbobj->userID . " (uniqueID, fileName)
 VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
