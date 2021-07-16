@@ -14,9 +14,7 @@ die("oh no, i couldn't connect to MySQL! here's why: " . $conn->connect_error);
 $dbjson = file_get_contents('php://input');
 $dbobj = json_decode($dbjson);
 
-$doesUserID = "SELECT count(*)
-FROM information_schema.TABLES
-WHERE (TABLE_SCHEMA = 'ugc_images') AND (TABLE_NAME = '" . $dbobj->userID . "')";
+$doesUserID = "if exists (select 1 from information_schema.tables where table_name = '" . $dbobj->userID . "')";
 
 $addImageUpload = "INSERT INTO " . $dbobj->userID . " (uniqueID, fileName)
 VALUES('" . $dbobj->uniqueID . "', '" . $dbobj->fileName . "')";
