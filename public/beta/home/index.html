@@ -49,7 +49,15 @@
     // Set default FilePond options
     FilePond.setOptions({
 
-        server: '/php/',
+        server: {
+
+  url: '/php/',
+  process: {
+  method: 'POST',
+  url: 'submit.php',
+  onload: (response) => response.key,
+  },
+  },
     });
 
 
