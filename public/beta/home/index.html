@@ -54,7 +54,7 @@
   url: '/php/',
   process: {
   url: 'index.php',
-  onload: (response) => {console.log(response)},
+  onload: (response) => {console.log(response, file.name)},
   onerror: null,
   ondata: null,
   },
@@ -65,11 +65,6 @@
     // Turn a file input into a file pond
     var pond = FilePond.create(document.querySelector('input[type="file"]'));
   const uploader = document.querySelector('.my-pond');
-  uploader.addEventListener('FilePond:processfiles', (e) => {
-    console.log('File added', e);
-    console.log(uploader.response);
-});
-
 </script>
 <script src="../auth.js"></script>
 <script>
