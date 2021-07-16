@@ -46,7 +46,7 @@ function handle_base64_encoded_file_post($files) {
             "data": "/9j/4AAQSkZJRgABAQEASABIAA..."
         }
         */
-        $file = @json_decode($file);
+        $file = json_decode($file);
         // Skip files that failed to decode
         if (!is_object($file)) continue;
 
