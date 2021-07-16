@@ -54,7 +54,7 @@
   url: '/php/',
   process: {
   url: 'submit.php',
-  onload: (response) => response.key,
+  onload: (response) => {return response},
   },
   },
     });
@@ -65,7 +65,7 @@
   const uploader = document.querySelector('.my-pond');
   uploader.addEventListener('FilePond:processfiles', (e) => {
     console.log('File added', e);
-    console.log(file.serverId);
+    console.log(response);
 });
 
 </script>
