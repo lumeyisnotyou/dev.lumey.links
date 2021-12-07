@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/lumeyisnotyou/dev.lumey.links#readme",
   "dependencies": {
+    "@material/progress-indicator": "^13.0.0",
+    "@material/theme": "^13.0.0",
     "material-components-web": "^11.0.0"
   }
 }
