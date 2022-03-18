@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emblema+One&display=swap');
+.title-text {
+  font-size: 50px
+}
+.title-text .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  50% {opacity: 0;}
+  100% {opacity:1;}
+}
+p {
+    font-family: 'Roboto Mono', monospace;
+    animation: fadeIn linear 3s;
+    }
+    
+h2 {
+      font-family: 'Roboto Mono', monospace;
+      animation: fadeIn linear 3s;
+     }
+  
+
+body{
+  grid-template-columns: 1fr 2fr;
+  align-items: left;
+  padding: 4vmin;
+  height: 90%;
+  width: 90%;
+  background: #ede8e2;
+  color: #3a3535;
+}
+/*BETA*/
+
+.menuitemlink{
+    animation: fadeIn linear 3s;
+}
+a {
+font-family: 'Roboto Mono', monospace;
+font-weight: 500;
+color: white;
+text-align: center;
+padding-right: 5px;
+padding-left: 5px;
+text-decoration: none;
+position: relative;
+vertical-align: middle;
+}
+a:hover {
+color: white;
+
+}
+a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+.forms {
+  position: absolute;
+  margin: auto;
+  width: 700px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.form {
+  margin: 50px;
+  font-size: 13px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  color: #fff;
+}
+.form__item-title {
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  transition: all 0.1s ease-out;
+}
+.form__item {
+  margin-bottom: 15px;
+  position: relative;
+}
+.form__item input {
+  padding: 15px 7px 10px 7px;
+  width: 100%;
+  border: 0;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  background-color: #2d3945;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #fff;
+  outline: 0;
+  transition: all 0.3s ease-out;
+}
+.form__item input:focus {
+  border-bottom-color: #b9d4ed;
+}
+.form__item input:focus + .form__item-title {
+  top: -5px;
+  left: 7px;
+  font-size: 11px;
+  color: #b9d4ed;
+}
+.form__item input:valid + .form__item-title {
+  top: -5px;
+  left: 7px;
+  font-size: 11px;
+  color: #b9d4ed;
+}
+.form__item input:invalid  {
+  border-bottom-color: #e66767;
+}
+.form__item input:invalid + .form__item-title {
+  color: #e66767;
+}
+
+
+.authbutton {
+background-color: #fff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 900;
+  color: #326da8;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: box-shadow 0.5s ease-out;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+    transform: translate(-50%, 0);
+}
+.authbutton:hover {
+  box-shadow: 0 4px 8px 0 rgba(255,255,255,0.24), 0 7px 25px 0 rgba(255,255,255,255.19);
+
+}
+.authbutton:active {
+  box-shadow: 0 0px;
+  background-color: #ebebeb; /* i really like this color hex code btw */
+}
+
+.navlogo {
+position: relative;
+width: 203px;
+height: 85.3px;
+}
+.nav {
+position: fixed;
+top: 0;
+width: 95%;
+z-index: 20;
+}
+.menuitemdiv{
+position: fixed;
+top: 3.5%;
+left: 75%;
+font-size: 20px;
+padding-left: 5px;
+padding-right: 5px;
+margin: auto;
+}
+.navitem{
+padding-left: 20px;
+padding-right: 20px;
+    animation: fadeIn linear 3s;
+}
+.buttonb {
+  background-color: rgb(23,23,23);
+  border: 2px solid #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 900;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: all 0.5s ease-out;
+  border-radius: 10px;
+ height: 50%;
+     animation: fadeIn linear 2s;
+  }
+.buttonb:hover {
+  box-shadow: 0 4px 8px 0 rgba(255,255,255,0.24), 0 7px 25px 0 rgba(255,255,255,255.19);
+  background-color: #fff;
+  color: black;
+
+}
+.buttonb:active {
+  box-shadow: 0 0px;
+  background-color: #ebebeb; /* i really like this color hex code btw */
+
+}
+
+.buttonbb {
+  background-color: rgb(23,23,23);
+  border: 2px solid #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 900;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: all 0.5s ease-out;
+  border-radius: 10px;
+ height: 50%;
+ left: 50%;
+ top: 75%;
+ position: fixed;
+ transform: translate(-50%, -50%);
+     animation: fadeIn linear 2s;
+  }
+.buttonbb:hover {
+  box-shadow: 0 4px 8px 0 rgba(255,255,255,0.24), 0 7px 25px 0 rgba(255,255,255,255.19);
+  background-color: #fff;
+  color: black;
+
+}
+.buttonbb:active {
+  box-shadow: 0 0px;
+  background-color: #ebebeb; /* i really like this color hex code btw */
+
+}
+li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
