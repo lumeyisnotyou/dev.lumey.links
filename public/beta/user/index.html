@@ -1,106 +1,110 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
   <link rel="stylesheet" href="https://links.lumey.dev/style.css">
-    <link rel="stylesheet" href="./scripts/filepond.css">
+  <link rel="stylesheet" href="./scripts/filepond.css">
   <title>user | BETA</title>
 </head>
+
 <body style="background-color: rgb(23,23,23)">
 
   <div>
- <nav class="nav">
+    <nav class="nav">
       <img src="../img/links.png" class="navlogo"></img>
-    <div class="menuitemdiv">
-      <a class="navitem" href="../home/">upload</a>
-      <whitespace style="width: 20px; height: 100%;"></whitespace>
-      <a class="navitem" >profile</a>
-          <button class="buttonb" onclick="return signOut()">sign out</button>
+      <div class="menuitemdiv">
+        <a class="navitem" href="../home/">upload</a>
+        <whitespace style="width: 20px; height: 100%;"></whitespace>
+        <a class="navitem">profile</a>
+        <button class="buttonb" onclick="return signOut()">sign out</button>
       </div>
-      </nav>
+    </nav>
+    <!--get all your images!-->
+    <script src="index.js"></script>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://links.lumey.dev/animation.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 
-<!-- DONE: Add SDKs for Firebase products that you want to use
+    <!-- DONE: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-<script src="../auth.js"></script>
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyAo3rC4uaenfAWo0P3BtveNv5nRC7CRpLI",
-    authDomain: "lumeylinks.firebaseapp.com",
-    projectId: "lumeylinks",
-    storageBucket: "lumeylinks.appspot.com",
-    messagingSenderId: "194912271062",
-    appId: "1:194912271062:web:142561e772bb6ae4b22777",
-    measurementId: "G-6NRMCW80P4"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="../auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAo3rC4uaenfAWo0P3BtveNv5nRC7CRpLI",
+        authDomain: "lumeylinks.firebaseapp.com",
+        projectId: "lumeylinks",
+        storageBucket: "lumeylinks.appspot.com",
+        messagingSenderId: "194912271062",
+        appId: "1:194912271062:web:142561e772bb6ae4b22777",
+        measurementId: "G-6NRMCW80P4"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <script>
       // Check if user is already signed in
-    firebase.auth().onAuthStateChanged((user)=>{
-    if (user) {
-    //   User is signed in.
-        let user = firebase.auth().currentUser;
-        let uid
-        if(user != null){
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          //   User is signed in.
+          let user = firebase.auth().currentUser;
+          let uid
+          if (user != null) {
             uid = user.uid;
 
+          }
+        } else {
+          window.location.replace("../login.html");
         }
-      } else {
-        window.location.replace("../login.html");
-      }
       });
 
-       // Get a reference to the file input element
-    const inputElement = document.querySelector('input[type="file"]');
-    // Set default FilePond options
-  //plugin too
+      // Get a reference to the file input element
+      const inputElement = document.querySelector('input[type="file"]');
+      // Set default FilePond options
+      //plugin too
       FilePond.registerPlugin(FilePondPluginImagePreview);
-    FilePond.setOptions({
-  instantUpload: false,
+      FilePond.setOptions({
+        instantUpload: false,
         server: {
 
-  url: '/php/',
-  process: {
-  url: 'index.php',
-  onload: (response) => {
-  console.log(response, pond.getFile().filename)
-  if(response != null){
-       var toEncode = {'uniqueID': response, 'fileName': pond.getFile().filename, 'userID': firebase.auth().currentUser.uid}
-  var encodedResult = JSON.stringify(toEncode);
-      console.log(encodedResult)
-      var dbRequest = new XMLHttpRequest();
-      dbRequest.open("POST", 'https://links.lumey.dev/php/db.php',true);
-      dbRequest.setRequestHeader('Content-Type', 'application/json');
-      dbRequest.send(encodedResult);
-      }
+          url: '/php/',
+          process: {
+            url: 'index.php',
+            onload: (response) => {
+              console.log(response, pond.getFile().filename)
+              if (response != null) {
+                var toEncode = { 'uniqueID': response, 'fileName': pond.getFile().filename, 'userID': firebase.auth().currentUser.uid }
+                var encodedResult = JSON.stringify(toEncode);
+                console.log(encodedResult)
+                var dbRequest = new XMLHttpRequest();
+                dbRequest.open("POST", 'https://links.lumey.dev/php/db.php', true);
+                dbRequest.setRequestHeader('Content-Type', 'application/json');
+                dbRequest.send(encodedResult);
+              }
 
-  setTimeout(function(){
-    window.location.replace("https://links.lumey.dev/uploads/" + response + "/" + pond.getFile().filename);
-  },5000)
+              setTimeout(function () {
+                window.location.replace("https://links.lumey.dev/uploads/" + response + "/" + pond.getFile().filename);
+              }, 5000)
 
-  },
-  onerror: null,
-  ondata: null,
-  },
-  },
-    });
+            },
+            onerror: null,
+            ondata: null,
+          },
+        },
+      });
 
 
-    // Turn a file input into a file pond
-    var pond = FilePond.create(document.querySelector('input[type="file"]'));
-  const uploader = document.querySelector('.my-pond');
+      // Turn a file input into a file pond
+      var pond = FilePond.create(document.querySelector('input[type="file"]'));
+      const uploader = document.querySelector('.my-pond');
 
     </script>
 </body>
-</html>
 
+</html>
